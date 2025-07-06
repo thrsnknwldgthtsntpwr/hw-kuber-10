@@ -1,0 +1,11 @@
+app:
+  name: nginx
+  ver: "1.19.0"
+pkg:
+  name: nginx
+  ver: "1.19.0"
+  port: 82
+  targetport: 82
+mount:
+  name: mnt
+  path: /usr/share/nginx/html

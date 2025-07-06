@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.pkg.name }}-{{ .Release.Name }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Values.pkg.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.pkg.name }}
+    spec:
+      containers:
+        - name: {{ .Values.app.name }}-{{ .Values.pkg.name }}
+          image: {{ .Values.pkg.name }}:{{ .Values.pkg.ver }}
+          volumeMounts:
+          - name: {{ .Values.mount.name }}
+            mountPath: {{ .Values.mount.path }}
+      volumes:
+        - name: {{ .Values.mount.name }}
+          configMap:
+            name: {{ .Values.pkg.name }}-{{ .Release.Name}}-html

@@ -1,0 +1,11 @@
+app:
+  name: nginx
+  ver: "1.17.0"
+pkg:
+  name: nginx
+  ver: latest
+  port: 80
+  targetport: 80
+mount:
+  name: mnt
+  path: /usr/share/nginx/html

@@ -1,0 +1,6 @@
+apiVersion: v2
+name: netology-chart
+description: A Helm chart for Netology hw-kuber-10
+type: application
+version: 0.1.0
+appVersion: "1.16.0"
